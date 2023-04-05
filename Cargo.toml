@@ -1,0 +1,16 @@
+[package]
+name = "bevy_action"
+version = "0.1.0"
+edition = "2021"
+authors = ["undersquire"]
+license = "MIT OR Apache-2.0"
+documentation = "https://docs.rs/bevy_action"
+homepage = "https://github.com/undersquire/bevy_action"
+repository = "https://github.com/undersquire/bevy_action"
+readme = "README.md"
+description = ""
+
+[dependencies]
+bevy_app = "0.10"
+bevy_ecs = "0.10"
+bevy_reflect = "0.10"
