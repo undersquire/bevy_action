@@ -8,7 +8,7 @@ documentation = "https://docs.rs/bevy_action"
 homepage = "https://github.com/undersquire/bevy_action"
 repository = "https://github.com/undersquire/bevy_action"
 readme = "README.md"
-description = ""
+description = "Simple action system for Bevy."
 
 [dependencies]
 bevy_app = "0.10"
