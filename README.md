@@ -4,7 +4,7 @@ Simple action system for Bevy.
 
 ## Introduction
 
-This plugin exists mainly to facilitate a common action system for other plugins to hook in to (e.g. `bevy_action_animation`).
+This plugin exists mainly to facilitate a common action system for other plugins to hook in to (e.g. [bevy_action_animation](https://github.com/undersquire/bevy_action_animation)).
 
 It also serves as a way to decouple certain parts of game logic to avoid hard-coding things, such as hard-coding input handling to actions rather than directly to movement logic.
 
