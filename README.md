@@ -13,11 +13,10 @@ There are three main components, the `Action` trait, the `ActionEvent` event, an
 ## Usage
 
 Start by defining your own type to represent the actions (enum is recommended).
-You will then need to derive the required traits and manually implement the `Action` trait (this will be derivable in the future):
+You will then need to derive the required traits:
 
 ```rs
-#[derive(Clone, Debug, PartialEq, Eq, Hash, Default, Serialize, Deserialize, TypeUuid)]
-#[uuid = "UUID_HERE"]
+#[derive(Clone, Debug, PartialEq, Eq, Hash, Default, Serialize, Deserialize, Reflect, Action)]
 enum MyAction {
   #[default]
   Idle,
@@ -25,8 +24,6 @@ enum MyAction {
   Right,
   Jump
 }
-
-impl Action for MyAction {}
 ```
 
 Next, register the plugin using this type as the generic parameter:
@@ -40,7 +37,7 @@ fn main() {
 }
 ```
 
-Now, `ActionEvent` can be used with `EventReader` and `EventWriter` just like any normal Bevy event.
+Now, `ActionEvent<MyAction>` can be used with `EventReader` and `EventWriter` just like any normal Bevy event.
 
 ## Compatibility
 

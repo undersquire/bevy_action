@@ -2,11 +2,9 @@ use core::marker::PhantomData;
 
 use bevy_app::{App, Plugin};
 use bevy_ecs::prelude::Entity;
-use bevy_reflect::TypeUuid;
+use bevy_reflect::GetTypeRegistration;
 
 /// Implemented for any custom action type.
-///
-/// NOTE: Currently requires implementing [`TypeUuid`]. This may be removed in the future.
 pub trait Action:
     Sized
     + Clone
@@ -18,7 +16,7 @@ pub trait Action:
     + Sync
     + 'static
     + Default
-    + TypeUuid
+    + GetTypeRegistration
 {
 }
 
@@ -35,6 +33,6 @@ pub struct ActionPlugin<T: Action>(PhantomData<T>);
 
 impl<T: Action> Plugin for ActionPlugin<T> {
     fn build(&self, app: &mut App) {
-        app.add_event::<ActionEvent<T>>();
+        app.register_type::<T>().add_event::<ActionEvent<T>>();
     }
 }

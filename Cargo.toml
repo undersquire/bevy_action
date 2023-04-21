@@ -1,6 +1,6 @@
 [package]
 name = "bevy_action"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["undersquire"]
 license = "MIT OR Apache-2.0"
@@ -14,3 +14,4 @@ description = "Simple action system for Bevy."
 bevy_app = "0.10"
 bevy_ecs = "0.10"
 bevy_reflect = "0.10"
+bevy_action_derive = { path = "bevy_action_derive", version = "0.1" }
