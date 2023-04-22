@@ -2,7 +2,7 @@ use core::marker::PhantomData;
 
 use bevy_app::{App, Plugin};
 use bevy_ecs::prelude::Entity;
-use bevy_reflect::GetTypeRegistration;
+use bevy_reflect::{FromReflect, GetTypeRegistration};
 
 /// Implemented for any custom action type.
 pub trait Action:
@@ -17,6 +17,7 @@ pub trait Action:
     + 'static
     + Default
     + GetTypeRegistration
+    + FromReflect
 {
 }
 
