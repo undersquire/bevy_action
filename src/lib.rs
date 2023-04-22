@@ -1,5 +1,6 @@
 use core::marker::PhantomData;
 
+pub use bevy_action_derive::*;
 use bevy_app::{App, Plugin};
 use bevy_ecs::prelude::Entity;
 use bevy_reflect::{FromReflect, GetTypeRegistration};
