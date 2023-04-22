@@ -13,5 +13,4 @@ description = "Simple action system for Bevy."
 [dependencies]
 bevy_app = "0.10"
 bevy_ecs = "0.10"
-bevy_reflect = "0.10"
 bevy_action_derive = { path = "bevy_action_derive", version = "0.1" }

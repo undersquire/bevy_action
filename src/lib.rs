@@ -3,22 +3,10 @@ use core::marker::PhantomData;
 pub use bevy_action_derive::*;
 use bevy_app::{App, Plugin};
 use bevy_ecs::prelude::Entity;
-use bevy_reflect::{FromReflect, GetTypeRegistration};
 
 /// Implemented for any custom action type.
 pub trait Action:
-    Sized
-    + Clone
-    + std::fmt::Debug
-    + PartialEq
-    + Eq
-    + std::hash::Hash
-    + Send
-    + Sync
-    + 'static
-    + Default
-    + GetTypeRegistration
-    + FromReflect
+    Sized + Clone + std::fmt::Debug + PartialEq + Eq + std::hash::Hash + Send + Sync + 'static + Default
 {
 }
 
@@ -35,6 +23,6 @@ pub struct ActionPlugin<T: Action>(PhantomData<T>);
 
 impl<T: Action> Plugin for ActionPlugin<T> {
     fn build(&self, app: &mut App) {
-        app.register_type::<T>().add_event::<ActionEvent<T>>();
+        app.add_event::<ActionEvent<T>>();
     }
 }
