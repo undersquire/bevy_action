@@ -16,7 +16,7 @@ Start by defining your own type to represent the actions (enum is recommended).
 You will then need to derive the required traits:
 
 ```rs
-#[derive(Clone, Debug, PartialEq, Eq, Hash, Default, Serialize, Deserialize, Reflect, FromReflect, Action)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash, Default, Action)]
 enum MyAction {
   #[default]
   Idle,
